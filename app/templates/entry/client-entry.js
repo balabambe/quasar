@@ -21,8 +21,10 @@ import '@quasar/extras/<%= asset %>/<%= asset %>.css'
 import '@quasar/extras/animate/<%= asset %>.css'
 <% }) %>
 
-// We load Quasar stylesheet file
+<% if (!framework.removeDefaultCss) { %>
+  // We load Quasar stylesheet file
 import 'quasar/dist/quasar.<%= __css.quasarSrcExt %>'
+<% } %>
 
 <% if (framework.cssAddon) { %>
 // We add Quasar addons, if they were requested
